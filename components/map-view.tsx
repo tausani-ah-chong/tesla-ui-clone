@@ -14,6 +14,14 @@ type Coordinates = {
 
 const INITIAL_COORDINATES: Coordinates = { lat: -36.8626, long: 174.7382 }; // Grey Lynn, Auckland, NZ
 
+enum MapStyleEnum {
+  NAVIGATION_NIGHT = "mapbox://styles/mapbox/navigation-night-v1",
+  NAVIGATION_DAY = "mapbox://styles/mapbox/navigation-day-v1",
+  LIGHT = "mapbox://styles/mapbox/light-v10",
+  DARK = "mapbox://styles/mapbox/dark-v10",
+  SATELLITE_STREETS = "mapbox://styles/mapbox/satellite-streets-v11",
+}
+
 const MapView: FunctionComponent<MapViewProps> = (props) => {
   const { MAPBOX_TOKEN } = props;
 
@@ -30,7 +38,7 @@ const MapView: FunctionComponent<MapViewProps> = (props) => {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: MapStyleEnum.DARK,
       center: [coordinates.long, coordinates.lat],
       zoom: zoom,
     });
