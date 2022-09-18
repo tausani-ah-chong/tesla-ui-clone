@@ -5,10 +5,10 @@ import CarView from "../components/car-view";
 import Controls from "../components/controls";
 import MapView from "../components/map-view";
 
-type HomeProps = InferGetStaticPropsType<typeof getStaticProps>
+type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: FunctionComponent<HomeProps> = (props) => {
-  const { MAPBOX_TOKEN } = props; 
+  const { MAPBOX_TOKEN } = props;
 
   return (
     <div className="flex flex-col justify-between h-screen w-full p-12">
@@ -38,7 +38,9 @@ const Home: FunctionComponent<HomeProps> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<{ MAPBOX_TOKEN: string }> = async () => {
+export const getStaticProps: GetStaticProps<{
+  MAPBOX_TOKEN: string;
+}> = async () => {
   return {
     props: {
       MAPBOX_TOKEN: process.env.MAPBOX_TOKEN,

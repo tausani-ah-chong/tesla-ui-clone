@@ -5,14 +5,14 @@ import next from "next";
 
 type MapViewProps = {
   MAPBOX_TOKEN: string;
-}
+};
 
 type Coordinates = {
   lat: number;
   long: number;
-}
+};
 
-const INITIAL_COORDINATES: Coordinates = { lat: -36.8626, long: 174.7382 } // Grey Lynn, Auckland, NZ
+const INITIAL_COORDINATES: Coordinates = { lat: -36.8626, long: 174.7382 }; // Grey Lynn, Auckland, NZ
 
 const MapView: FunctionComponent<MapViewProps> = (props) => {
   const { MAPBOX_TOKEN } = props;
@@ -21,11 +21,9 @@ const MapView: FunctionComponent<MapViewProps> = (props) => {
 
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [coordinates, setCoordinates] = useState<Coordinates>(INITIAL_COORDINATES);
+  const [coordinates, setCoordinates] =
+    useState<Coordinates>(INITIAL_COORDINATES);
   const [zoom, setZoom] = useState(14);
-
-  console.log(coordinates);
-  
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -36,13 +34,16 @@ const MapView: FunctionComponent<MapViewProps> = (props) => {
       center: [coordinates.long, coordinates.lat],
       zoom: zoom,
     });
-  }, []);
+  }, [coordinates, zoom]);
 
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
 
     map.current.on("move", () => {
-      setCoordinates({ lat: map.current.getCenter().lat.toFixed(4), long: map.current.getCenter().lng.toFixed(4) })
+      setCoordinates({
+        lat: map.current.getCenter().lat.toFixed(4),
+        long: map.current.getCenter().lng.toFixed(4),
+      });
       setZoom(map.current.getZoom().toFixed(2));
     });
   }, []);
