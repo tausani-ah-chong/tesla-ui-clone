@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps<{
 }> = async () => {
   return {
     props: {
-      MAPBOX_TOKEN: process.env.MAPBOX_TOKEN,
+      MAPBOX_TOKEN: JSON.stringify(process.env.MAPBOX_TOKEN),
     },
   };
 };
