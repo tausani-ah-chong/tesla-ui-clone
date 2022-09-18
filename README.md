@@ -3,3 +3,4 @@
 - TypeScript
 - NextJS
 - Tailwind
+- Mapbox GL
