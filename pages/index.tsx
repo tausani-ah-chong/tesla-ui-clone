@@ -30,7 +30,7 @@ const Home: FunctionComponent<HomeProps> = (props) => {
 
       <div className="columns-2 h-full">
         <CarView />
-        <MapView MAPBOX_TOKEN={MAPBOX_TOKEN} />
+        {MAPBOX_TOKEN != null && <MapView MAPBOX_TOKEN={MAPBOX_TOKEN} />}
       </div>
 
       <Controls />
@@ -39,11 +39,11 @@ const Home: FunctionComponent<HomeProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<{
-  MAPBOX_TOKEN: string;
+  MAPBOX_TOKEN: string | undefined;
 }> = async () => {
   return {
     props: {
-      MAPBOX_TOKEN: JSON.stringify(process.env.MAPBOX_TOKEN),
+      MAPBOX_TOKEN: process.env.MAPBOX_TOKEN ?? undefined,
     },
   };
 };
