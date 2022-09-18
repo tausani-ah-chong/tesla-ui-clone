@@ -39,11 +39,11 @@ const Home: FunctionComponent<HomeProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<{
-  MAPBOX_TOKEN: string | undefined;
+  MAPBOX_TOKEN: string | null;
 }> = async () => {
   return {
     props: {
-      MAPBOX_TOKEN: process.env.MAPBOX_TOKEN ?? undefined,
+      MAPBOX_TOKEN: process.env.MAPBOX_TOKEN ?? null,
     },
   };
 };
