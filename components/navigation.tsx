@@ -17,12 +17,12 @@ const Navigation: FunctionComponent<NavigationProps> = (props) => {
         </span>
       }
       rightIcon={
-        <span className="material-icons text-2xl pl-14 text-gray-400">
+        <span className="material-icons text-2xl text-gray-400">
           chevron_right
         </span>
       }
       size="md"
-      radius="md"
+      radius="lg"
       onClick={handleClick}
     >
       Navigate
