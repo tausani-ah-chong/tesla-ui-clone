@@ -7,27 +7,7 @@ import MapView from '../components/map-view';
 
 const Home: FunctionComponent = () => {
   return (
-    <div className="flex flex-col justify-between h-screen w-full p-12">
-      <Head>
-        <title>Tesla UI Clone</title>
-        <meta
-          name="Ever wondered what it was like to drive a Tesla?"
-          content="Created by Tausani Ah Chong"
-        />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-        />
-        <link
-          href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css"
-          rel="stylesheet"
-        />
-      </Head>
-
+    <div className="flex flex-col justify-between h-screen w-full bg-black p-12">
       <div className="columns-2 h-full">
         <CarView />
         <MapView />

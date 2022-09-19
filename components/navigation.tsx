@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { Button } from '@mantine/core';
 
 interface NavigationProps {
   // prop: string;
@@ -8,17 +9,24 @@ const Navigation: FunctionComponent<NavigationProps> = (props) => {
   const handleClick = () => alert('Navigation coming soon!');
 
   return (
-    <a className="cursor-pointer" onClick={handleClick}>
-      <div className="absolute flex items-center left-8 top-8 p-2 w-48 bg-black bg-opacity-80 rounded-lg">
+    <Button
+      className="absolute bg-gray-900 bg-opacity-90 left-8 top-8 text-gray-400"
+      leftIcon={
         <span className="material-symbols-outlined text-2xl text-gray-400">
           near_me
         </span>
-        <p className="pl-2 text-gray-400">Navigate</p>
+      }
+      rightIcon={
         <span className="material-icons text-2xl pl-14 text-gray-400">
           chevron_right
         </span>
-      </div>
-    </a>
+      }
+      size="md"
+      radius="md"
+      onClick={handleClick}
+    >
+      Navigate
+    </Button>
   );
 };
 
