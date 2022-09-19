@@ -1,7 +1,7 @@
-import { FunctionComponent, useEffect, useRef, useState } from "react";
-import mapboxgl from "mapbox-gl";
-import { GetStaticProps } from "next";
-import next from "next";
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
+import mapboxgl from 'mapbox-gl';
+import { GetStaticProps } from 'next';
+import next from 'next';
 
 type Coordinates = {
   lat: number;
@@ -11,12 +11,12 @@ type Coordinates = {
 const INITIAL_COORDINATES: Coordinates = { lat: -36.8626, long: 174.7382 }; // Grey Lynn, Auckland, NZ
 
 enum MapStyleEnum {
-  NAVIGATION_NIGHT = "mapbox://styles/mapbox/navigation-night-v1",
-  NAVIGATION_DAY = "mapbox://styles/mapbox/navigation-day-v1",
-  LIGHT = "mapbox://styles/mapbox/light-v10",
-  DARK = "mapbox://styles/mapbox/dark-v10",
-  SATELLITE_STREETS = "mapbox://styles/mapbox/satellite-streets-v11",
-  CUSTOM_DARK = "mapbox://styles/tausani93/cl88096v3000015n0mg64534o",
+  NAVIGATION_NIGHT = 'mapbox://styles/mapbox/navigation-night-v1',
+  NAVIGATION_DAY = 'mapbox://styles/mapbox/navigation-day-v1',
+  LIGHT = 'mapbox://styles/mapbox/light-v10',
+  DARK = 'mapbox://styles/mapbox/dark-v10',
+  SATELLITE_STREETS = 'mapbox://styles/mapbox/satellite-streets-v11',
+  CUSTOM_DARK = 'mapbox://styles/tausani93/cl88096v3000015n0mg64534o',
 }
 
 const MapView: FunctionComponent = () => {
@@ -42,7 +42,7 @@ const MapView: FunctionComponent = () => {
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
 
-    map.current.on("move", () => {
+    map.current.on('move', () => {
       setCoordinates({
         lat: map.current.getCenter().lat.toFixed(4),
         long: map.current.getCenter().lng.toFixed(4),
@@ -52,7 +52,7 @@ const MapView: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center rounded-lg h-full">
+    <div className="h-full">
       <div ref={mapContainer} className="h-full w-full rounded-lg" />
     </div>
   );

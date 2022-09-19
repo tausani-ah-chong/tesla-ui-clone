@@ -1,9 +1,9 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import Head from "next/head";
-import { FunctionComponent } from "react";
-import CarView from "../components/car-view";
-import Controls from "../components/controls";
-import MapView from "../components/map-view";
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
+import { FunctionComponent } from 'react';
+import CarView from '../components/car-view';
+import Controls from '../components/controls';
+import MapView from '../components/map-view';
 
 const Home: FunctionComponent = () => {
   return (
