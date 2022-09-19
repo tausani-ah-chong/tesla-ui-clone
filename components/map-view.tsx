@@ -3,10 +3,6 @@ import mapboxgl from "mapbox-gl";
 import { GetStaticProps } from "next";
 import next from "next";
 
-type MapViewProps = {
-  MAPBOX_TOKEN: string;
-};
-
 type Coordinates = {
   lat: number;
   long: number;
@@ -22,10 +18,8 @@ enum MapStyleEnum {
   SATELLITE_STREETS = "mapbox://styles/mapbox/satellite-streets-v11",
 }
 
-const MapView: FunctionComponent<MapViewProps> = (props) => {
-  const { MAPBOX_TOKEN } = props;
-
-  mapboxgl.accessToken = MAPBOX_TOKEN;
+const MapView: FunctionComponent = () => {
+  mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
   const mapContainer = useRef(null);
   const map = useRef(null);
