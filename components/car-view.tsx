@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 
 const CarView: FunctionComponent = () => {
-  const handleClick = () => alert('Car view tapped');
+  const handleClick = () => alert('Car view coming soon!');
 
   return (
     <div

@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 
 const Controls: FunctionComponent = () => {
-  const handleClick = () => alert('Controls tapped');
+  const handleClick = () => alert('Controls coming soon!');
 
   return (
     <div
