@@ -16,6 +16,7 @@ enum MapStyleEnum {
   LIGHT = "mapbox://styles/mapbox/light-v10",
   DARK = "mapbox://styles/mapbox/dark-v10",
   SATELLITE_STREETS = "mapbox://styles/mapbox/satellite-streets-v11",
+  CUSTOM_DARK = "mapbox://styles/tausani93/cl88096v3000015n0mg64534o",
 }
 
 const MapView: FunctionComponent = () => {
@@ -32,7 +33,7 @@ const MapView: FunctionComponent = () => {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: MapStyleEnum.DARK,
+      style: MapStyleEnum.CUSTOM_DARK,
       center: [coordinates.long, coordinates.lat],
       zoom: zoom,
     });
