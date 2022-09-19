@@ -15,7 +15,7 @@ const MapOverlay: FunctionComponent<MapOverlayProps> = (props) => {
     <>
       <Navigation />
       <Button
-        className="absolute top-8 right-8 bg-gray-900 bg-opacity-90 "
+        className="absolute top-8 right-8 bg-gray-900 opacity-90"
         variant="filled"
         radius="xl"
         size="md"
@@ -27,7 +27,7 @@ const MapOverlay: FunctionComponent<MapOverlayProps> = (props) => {
       </Button>
       <Button.Group orientation="vertical" className="absolute top-24 right-8">
         <Button
-          className="bg-gray-900 bg-opacity-90 "
+          className="bg-gray-900 opacity-90"
           variant="filled"
           size="md"
           onClick={onClickZoomIn}
@@ -35,7 +35,7 @@ const MapOverlay: FunctionComponent<MapOverlayProps> = (props) => {
           <span className="material-symbols-outlined text-gray-400">add</span>
         </Button>
         <Button
-          className="bg-gray-900 bg-opacity-90"
+          className="bg-gray-900 opacity-90"
           variant="filled"
           size="md"
           onClick={onClickZoomOut}

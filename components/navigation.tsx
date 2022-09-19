@@ -10,7 +10,7 @@ const Navigation: FunctionComponent<NavigationProps> = (props) => {
 
   return (
     <Button
-      className="absolute bg-gray-900 bg-opacity-90 left-8 top-8 text-gray-400"
+      className="absolute bg-gray-900 left-8 top-8 text-gray-400 opacity-90"
       leftIcon={
         <span className="material-symbols-outlined text-2xl text-gray-400">
           near_me

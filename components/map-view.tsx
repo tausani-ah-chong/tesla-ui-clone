@@ -33,7 +33,7 @@ const MapView: FunctionComponent = () => {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: MapStyleEnum.NAVIGATION_NIGHT,
+      style: MapStyleEnum.LIGHT,
       center: [coordinates.long, coordinates.lat],
       zoom: zoom,
     });
